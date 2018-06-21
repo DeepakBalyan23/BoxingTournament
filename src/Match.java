@@ -65,7 +65,7 @@ public class Match {
 	
 	@Override
 	public String toString() {
-		String str = "Match Number "+matchId+": "+p1.name+" won "+roundsWonByP1+" rounds "+ " and "+p2.name+" won "+roundsWonByP2+" rounds.";
+		String str = "Match ID "+matchId+": "+p1.name+" won "+roundsWonByP1+" rounds "+ " and "+p2.name+" won "+roundsWonByP2+" rounds.";
 		if(matchWinner==null) {
 			str+="\nMatch tied";
 		}else {
