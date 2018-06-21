@@ -1,4 +1,4 @@
-
+/*ScoreCalculator class returns the sum of all the points in a round by a player*/
 public class ScoreCalculator {
 
 	public int totalScore(Points points) {

@@ -1,4 +1,4 @@
-
+//Points POJO class
 public class Points {
 	private int faceJab;
 	private int bodyJab;
@@ -72,5 +72,11 @@ public class Points {
 
 	public void setAllIllegalPunch(int allIllegalPunch) {
 		this.allIllegalPunch = allIllegalPunch;
+	}
+	
+	@Override
+	public String toString(){
+		String str = "Face Jab Points: "+faceJab+", Body Jab Points: "+bodyJab+", Face Hook Points: "+faceHook+", Body Hook Points: "+bodyHook+", Face Upper Cut Points: "+faceUpperCut+", Body Upper Cut Points: "+bodyUpperCut+", All Illegal Punches Points: "+allIllegalPunch;
+		return str;
 	}
 }

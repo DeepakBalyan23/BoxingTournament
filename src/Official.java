@@ -1,5 +1,7 @@
 import java.util.Random;
 
+/* Official class extends Person Interface
+ * It is responsible for setting of the points value and the total score value in a round for Player1 and Player2.*/
 public class Official extends Person {
 	
 	public Official(int id, String name, String place, double experience) {

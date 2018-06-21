@@ -1,6 +1,7 @@
-
+//Round POJO class
 public class Round {
 	
+	private int roundNumber;
 	private Player p1;
 	private Player p2;
 	private Player roundWinner;
@@ -9,9 +10,18 @@ public class Round {
 	private int p1TotalScore;
 	private int p2TotalScore;
 	
-	public Round(Player p1, Player p2){
+	public Round(int roundNumber, Player p1, Player p2){
+		this.roundNumber = roundNumber;
 		this.p1 = p1;
 		this.p2 = p2;
+	}
+	
+	public int getRoundNumber() {
+		return roundNumber;
+	}
+
+	public void setRoundNumber(int roundNumber) {
+		this.roundNumber = roundNumber;
 	}
 	
 	public Player getP1() {
@@ -61,4 +71,16 @@ public class Round {
 	public void setPointOfP2(Points pointOfP2) {
 		this.pointsOfP2 = pointOfP2;
 	}
+
+	@Override
+	public String toString() {
+		String str = "Round "+roundNumber+": "+p1.name+" scored "+p1TotalScore+" and "+p2.name + " scored "+p2TotalScore+".";
+		if(roundWinner==null) {
+			str+="\nRound Tied";
+		}else {
+			str+="\nWinner: "+roundWinner.name;
+		}
+		return str;
+	}
+	
 }

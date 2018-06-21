@@ -1,4 +1,7 @@
-
+/*MatchResultGenerator class iterates through all the rounds and
+ * get the value of Total round won by p1 and p2 and
+ * set this value to Match POJO class
+ * It also set the value of Match Winner in Match POJO class.*/
 public class MatchResultGenerator {
 
 	public void setMatchWinnerPlayer(Match match) {

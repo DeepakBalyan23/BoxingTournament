@@ -1,4 +1,4 @@
-
+//Player POJO class extends Person Interface
 public class Player extends Person{
 	
 	private double weight;

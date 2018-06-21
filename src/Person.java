@@ -1,4 +1,4 @@
-
+/*Person Interface*/
 public abstract class Person {
 
 	public int id;

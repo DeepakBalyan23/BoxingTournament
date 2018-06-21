@@ -1,4 +1,5 @@
-
+/*ROundResultGenerator class generates the result of a particular round based on the player's total score
+ * and set the roundWnner in Round POJO class*/
 public class RoundResultGenerator {
 	
 	public void setRoundWinnerPlayer(Round round) {

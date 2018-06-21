@@ -1,7 +1,9 @@
 import java.util.List;
 
+//Match POJO class
 public class Match {
 
+	private int matchId;
 	private Player p1;
 	private Player p2;
 	private Player matchWinner;
@@ -10,8 +12,8 @@ public class Match {
 	private int roundsWonByP1;
 	private int roundsWonByP2;
 	
-	public Match(Player p1, Player p2, Official ref) {
-		super();
+	public Match(int matchId, Player p1, Player p2, Official ref) {
+		this.matchId = matchId;
 		this.p1 = p1;
 		this.p2 = p2;
 		this.ref = ref;
@@ -59,5 +61,16 @@ public class Match {
 
 	public void setRoundsWonByP2(int roundsWonByP2) {
 		this.roundsWonByP2 = roundsWonByP2;
+	}
+	
+	@Override
+	public String toString() {
+		String str = "Match Number "+matchId+": "+p1.name+" won "+roundsWonByP1+" rounds "+ " and "+p2.name+" won "+roundsWonByP2+" rounds.";
+		if(matchWinner==null) {
+			str+="\nMatch tied";
+		}else {
+			str+="\nMatch Winner: "+matchWinner.name;
+		}
+		return str;
 	}
 }
