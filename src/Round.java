@@ -1,10 +1,14 @@
 //Round POJO class
 public class Round {
-	
+	//These Fields will be set by the constructor
 	private int roundNumber;
 	private Player p1;
 	private Player p2;
+	
+	//Round winner will be set by RoundResultGenerator
 	private Player roundWinner;
+	
+	//These points fields will be set by the Official class
 	private Points pointsOfP1;
 	private Points pointsOfP2;
 	private int p1TotalScore;
@@ -78,7 +82,7 @@ public class Round {
 		if(roundWinner==null) {
 			str+="\nRound Tied";
 		}else {
-			str+="\nWinner: "+roundWinner.name;
+			str+="\nRound Winner: "+roundWinner.name;
 		}
 		return str;
 	}

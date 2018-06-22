@@ -16,10 +16,10 @@ public class BoxingOrganizer {
 		matchEngine.createRounds(match);
 		MatchResultGenerator matchResultGenerator = new MatchResultGenerator();
 		matchResultGenerator.setMatchWinnerPlayer(match);
-		System.out.println(match+"\n");
 		for(Round round: match.getRounds()) {
 			System.out.println(round + "\n");
 		}
+		System.out.println(match);
 	}
 	
 }

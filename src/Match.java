@@ -2,16 +2,20 @@ import java.util.List;
 
 //Match POJO class
 public class Match {
-
+	//These fields will be set by constructor.
 	private int matchId;
 	private Player p1;
 	private Player p2;
-	private Player matchWinner;
 	private Official ref;
+	private int numberOfRounds;
+	
+	//Match these fields will be set MatchEngine
 	private List<Round> rounds;
 	private int roundsWonByP1;
 	private int roundsWonByP2;
-	private int numberOfRounds;
+	
+	//matchWinner will be set by MatchResultGenerator
+	private Player matchWinner;
 	
 	public Match(int matchId, Player p1, Player p2, Official ref, int numberOfRounds) {
 		this.matchId = matchId;
@@ -75,7 +79,7 @@ public class Match {
 	
 	@Override
 	public String toString() {
-		String str = "Match ID "+matchId+": "+p1.name+" won "+roundsWonByP1+" rounds "+ " and "+p2.name+" won "+roundsWonByP2+" rounds.";
+		String str = "Match ID "+matchId+": "+p1.name+" won "+roundsWonByP1+" rounds and "+p2.name+" won "+roundsWonByP2+" rounds.";
 		if(matchWinner==null) {
 			str+="\nMatch tied";
 		}else {
