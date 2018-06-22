@@ -11,12 +11,14 @@ public class Match {
 	private List<Round> rounds;
 	private int roundsWonByP1;
 	private int roundsWonByP2;
+	private int numberOfRounds;
 	
-	public Match(int matchId, Player p1, Player p2, Official ref) {
+	public Match(int matchId, Player p1, Player p2, Official ref, int numberOfRounds) {
 		this.matchId = matchId;
 		this.p1 = p1;
 		this.p2 = p2;
 		this.ref = ref;
+		this.setNumberOfRounds(numberOfRounds);
 	}
 
 	public Player getP1() {
@@ -61,6 +63,14 @@ public class Match {
 
 	public void setRoundsWonByP2(int roundsWonByP2) {
 		this.roundsWonByP2 = roundsWonByP2;
+	}
+	
+	public int getNumberOfRounds() {
+		return numberOfRounds;
+	}
+
+	public void setNumberOfRounds(int numberOfRounds) {
+		this.numberOfRounds = numberOfRounds;
 	}
 	
 	@Override

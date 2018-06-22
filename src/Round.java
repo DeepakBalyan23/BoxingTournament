@@ -74,7 +74,7 @@ public class Round {
 
 	@Override
 	public String toString() {
-		String str = "Round "+roundNumber+": "+p1.name+" scored "+p1TotalScore+" and "+p2.name + " scored "+p2TotalScore+".";
+		String str = "Round "+roundNumber+": "+p1.name+" scored "+p1TotalScore+" and "+p2.name + " scored "+p2TotalScore+".\n"+p1.name+" points: "+pointsOfP1+"\n"+p2.name+" points: "+pointsOfP2;
 		if(roundWinner==null) {
 			str+="\nRound Tied";
 		}else {

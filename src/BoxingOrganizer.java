@@ -11,18 +11,14 @@ public class BoxingOrganizer {
 		Player p1 = new Player(1, "John", "US", 85, 5);
 		Player p2 = new Player(2, "Robbert", "England", 83, 2);
 		Official ref = new Official(3, "Jimmy", "England", 2);
-		Match match = new Match(101, p1, p2, ref);
+		Match match = new Match(101, p1, p2, ref, 11);
 		MatchEngine matchEngine = new MatchEngine();
 		matchEngine.createRounds(match);
 		MatchResultGenerator matchResultGenerator = new MatchResultGenerator();
 		matchResultGenerator.setMatchWinnerPlayer(match);
-		System.out.println(match);
-		System.out.println("");
+		System.out.println(match+"\n");
 		for(Round round: match.getRounds()) {
-			System.out.println(round);
-			System.out.println(round.getP1().name+" points: "+round.getPointOfP1());
-			System.out.println(round.getP2().name+" points: "+round.getPointOfP2());
-			System.out.println("");
+			System.out.println(round + "\n");
 		}
 	}
 	
