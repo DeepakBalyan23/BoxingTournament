@@ -11,13 +11,21 @@ public class Official extends Person {
 		this.experience = experience;
 	}
 	
-	public Round setPoints(Round round) {
-		round.setPointOfP1(new Points(new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, -new Random().nextInt(50) + 1));
-		round.setPointOfP2(new Points(new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, -new Random().nextInt(50) + 1));
+	public Round setPoints(Round round, String matchType) {
+		Points pointsOfP1;
+		Points pointsOfP2;
+		if(matchType=="Pro") {
+			pointsOfP1 = new ProBoxingPoints(new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, -new Random().nextInt(50) + 1);
+			pointsOfP2 = new ProBoxingPoints(new Random().nextInt(50) + 1, new Random().nextInt(50) + 1,new Random().nextInt(50) + 1, -new Random().nextInt(50) + 1);
+		} else {
+			pointsOfP1 = new GeneralBoxingPoints(new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, -new Random().nextInt(50) + 1);
+			pointsOfP2 = new GeneralBoxingPoints(new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, new Random().nextInt(50) + 1, -new Random().nextInt(50) + 1);
+		}
+		round.setPointOfP1(pointsOfP1);
+		round.setPointOfP2(pointsOfP2);
 		
-		ScoreCalculator sc = new ScoreCalculator();
-		round.setP1TotalScore(sc.totalScore(round.getPointOfP1()));
-		round.setP2TotalScore(sc.totalScore(round.getPointOfP2()));
+		round.setP1TotalScore(pointsOfP1.getTotalPoints());
+		round.setP2TotalScore(pointsOfP2.getTotalPoints());
 		
 		return round;
 	}

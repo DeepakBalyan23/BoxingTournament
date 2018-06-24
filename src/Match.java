@@ -8,6 +8,7 @@ public class Match {
 	private Player p2;
 	private Official ref;
 	private int numberOfRounds;
+	private String matchType;
 	
 	//Match these fields will be set MatchEngine
 	private List<Round> rounds;
@@ -17,11 +18,12 @@ public class Match {
 	//matchWinner will be set by MatchResultGenerator
 	private Player matchWinner;
 	
-	public Match(int matchId, Player p1, Player p2, Official ref, int numberOfRounds) {
+	public Match(int matchId, Player p1, Player p2, Official ref, String matchType, int numberOfRounds) {
 		this.matchId = matchId;
 		this.p1 = p1;
 		this.p2 = p2;
 		this.ref = ref;
+		this.matchType = matchType;
 		this.setNumberOfRounds(numberOfRounds);
 	}
 
@@ -77,9 +79,17 @@ public class Match {
 		this.numberOfRounds = numberOfRounds;
 	}
 	
+	public String getMatchType() {
+		return matchType;
+	}
+
+	public void setMatchType(String matchType) {
+		this.matchType = matchType;
+	}
+	
 	@Override
 	public String toString() {
-		String str = "Match ID "+matchId+": "+p1.name+" won "+roundsWonByP1+" rounds and "+p2.name+" won "+roundsWonByP2+" rounds.";
+		String str = "Match: "+matchType+"Boxing, ID "+matchId+", "+p1.name+" won "+roundsWonByP1+" rounds and "+p2.name+" won "+roundsWonByP2+" rounds.";
 		if(matchWinner==null) {
 			str+="\nMatch tied";
 		}else {

@@ -12,7 +12,7 @@ public class MatchEngine {
 		Player p2 = match.getP2();
 		ArrayList<Round> rounds = new ArrayList<>();;
 		for(int i=1; i<=match.getNumberOfRounds(); i++) {
-			Round round = ref.setPoints(new Round(i,p1, p2));
+			Round round = ref.setPoints(new Round(i,p1, p2), match.getMatchType());
 			RoundResultGenerator roundResultGenerator = new RoundResultGenerator();
 			roundResultGenerator.setRoundWinnerPlayer(round);
 			rounds.add(round);

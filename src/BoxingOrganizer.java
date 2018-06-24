@@ -11,7 +11,7 @@ public class BoxingOrganizer {
 		Player p1 = new Player(1, "John", "US", 85, 5);
 		Player p2 = new Player(2, "Robbert", "England", 83, 2);
 		Official ref = new Official(3, "Jimmy", "England", 2);
-		Match match = new Match(101, p1, p2, ref, 11);
+		Match match = new Match(101, p1, p2, ref, "General", 11);
 		MatchEngine matchEngine = new MatchEngine();
 		matchEngine.createRounds(match);
 		MatchResultGenerator matchResultGenerator = new MatchResultGenerator();
